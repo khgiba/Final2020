@@ -34,14 +34,23 @@ Every question is of the Cat~Cat type.
 
 <!--Divide this section into two sub-sections:  One for your descriptive  results and one for your inferential results.!-->
 
+##Graphical Descriptive Results
+
 ```{r}
 DataF = filter(FinalData,sex=="gal")
 barchartGC(~infected + treatment,data=DataF)
-barchartGC(~infected + treatment,data=DataF, type="percent")
+barchartGC(~infected + treatment,data=DataF, type="percent",main="gals")
 
 ``` 
 
-Among the femaleswho contracted Covid, twice as many took the placebo. Therefore it appears that the vaccine does have an effect.  
+Among the females who contracted Covid, twice as many took the placebo. Therefore it appears that the vaccine does have a positive effect.  
+
+```{r}
+DataG = filter(FinalData,sex=="guy")
+barchartGC(~infected + treatment,data=DataG)
+barchartGC(~infected + treatment,data=DataG, type="percent",main="guys")
+
+```
 
 # Discussion and Conclusion
 
