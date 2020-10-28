@@ -51,7 +51,14 @@ barchartGC(~infected + treatment,data=DataG)
 barchartGC(~infected + treatment,data=DataG, type="percent",main="guys")
 
 ```
-It appears that the vaccine has a negative effect on the guys, It seams that they are more likely to get Covid from the vaccine.   
+It appears that the vaccine has a negative effect on the guys, It seams that they are more likely to get Covid from the vaccine.  
+
+```{r}
+DataLGBTQ = filter(FinalData,LGBTQ=="gay")
+barchartGC(~infected + treatment,data=DataLGBTQ)
+barchartGC(~infected + treatment,data=DataLGBTQ, type="percent",main="gays")
+
+```
 
 # Discussion and Conclusion
 
