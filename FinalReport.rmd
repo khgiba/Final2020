@@ -34,7 +34,7 @@ Every question is of the Cat~Cat type.
 
 <!--Divide this section into two sub-sections:  One for your descriptive  results and one for your inferential results.!-->
 
-##Graphical Descriptive Results
+#Graphical Descriptive Results
 
 ```{r}
 DataF = filter(FinalData,sex=="gal")
@@ -51,8 +51,8 @@ barchartGC(~infected + treatment,data=DataG)
 barchartGC(~infected + treatment,data=DataG, type="percent",main="guys")
 
 ```
-  
-It appears that the vaccine has a negative effect on the guys, It seems that they are more likely to get Covid from the vaccine.    
+    
+It appears that the vaccine has a negative effect on the guys, It seems that they are more likely to get Covid from the vaccine.      
 
 ```{r}
 DataLGBTQ = filter(FinalData,LGBTQ=="gay")
@@ -60,17 +60,18 @@ barchartGC(~infected + treatment,data=DataLGBTQ)
 barchartGC(~infected + treatment,data=DataLGBTQ, type="percent",main="gays")
 
 ```
-It appears that the vaccine has a negative effect on the LGBTQ, It seems that they are more likely to get Covid from the vaccine.  
+  
+It appears that the vaccine has a negative effect on the LGBTQ, It seems that they are more likely to get Covid from the vaccine.    
 
 
 ```{r}
-DataDrugUser = filter(FinalData,DrugUser=="no")
+DataDrugUser = filter(FinalData,DrugUser=="yes")
 barchartGC(~infected + treatment,data=DataDrugUser)
 barchartGC(~infected + treatment,data=DataDrugUser, type="percent",main="drugs")
 
 ```
   
-Among the people who take drugs and was given the vaccine it appears that there is a negative response and are likely to get Covid.      
+Among the Drug Users who contracted Covid, twice as many took the placebo. Therefore it appears that the vaccine does have a positive effect.       
   
 # Discussion and Conclusion
 
