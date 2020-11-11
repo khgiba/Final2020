@@ -147,6 +147,7 @@ rowPerc(table1)
 colPerc(table1)
 ```
 
+As you can see the amount of infected is 33.33% who took the drug and 66.67 % took the placebo. The Drug has a positive effect on the drug users who took the vaccine.  
 
 ## Inferential for Drug Users.
 
@@ -155,6 +156,8 @@ chisq.test(table1)
 chisqtestGC(table1)
 fisher.test(table1)
 ```
+
+The odds of 0.5455093  more likely for drug users who take the drug will not get covid than taking the placebo. The vaccine has a positive effect on this group.  
   
 # Discussion and Conclusion
 
