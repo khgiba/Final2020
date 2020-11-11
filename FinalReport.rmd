@@ -34,7 +34,7 @@ Every question is of the Cat~Cat type.
 
 <!--Divide this section into two sub-sections:  One for your descriptive  results and one for your inferential results.!-->
 
-#Graphical Descriptive Results for Gals.  
+## Graphical Descriptive Results for Gals.    
 
 ```{r}
 DataF = filter(FinalData,sex=="gal")
@@ -65,7 +65,7 @@ fisher.test(table1)
 
 The fisher test shows us that the odds of 0.4889403 % of gal who took the placebo got covid compared to taking the drug.   
 
-#Graphical Descriptive Results for Guys. 
+## Graphical Descriptive Results for Guys.   
 
 ```{r}
 DataG = filter(FinalData,sex=="guy")
@@ -96,7 +96,7 @@ fisher.test(table1)
 
 The odds of 1.473872 more likely for guys who took the drug to get covid than taking the placebo.    
 
-#Graphical Descriptive Results for Gays. 
+## Graphical Descriptive Results for Gays.   
 
 ```{r}
 DataLGBTQ = filter(FinalData,LGBTQ=="gay")
@@ -115,6 +115,9 @@ rowPerc(table1)
 colPerc(table1)
 ```
 
+As you can see the amount of infected is 70.69% who took the drug and 29.31 % took the placebo. Therefore taking the drug for the LGBTQ group has a negative effect.    
+
+
 ## Inferential for Gays.  
 
 ```{r}
@@ -123,8 +126,9 @@ chisqtestGC(table1)
 fisher.test(table1)
 ```
 
+The odds of 2.492206 more likely for gays who take the drug will get covid than taking the placebo.        
 
-#Graphical Descriptive Results for Drug Users.   
+## Graphical Descriptive Results for Drug Users.   
 
 ```{r}
 DataDrugUser = filter(FinalData,DrugUser=="yes")
@@ -135,7 +139,7 @@ barchartGC(~infected + treatment,data=DataDrugUser, type="percent",main="drugs")
   
 Among the Drug Users who contracted Covid, twice as many took the placebo. Therefore it appears that the vaccine does have a positive effect.       
  
-## Numerical Summeries for Gays.
+## Numerical Summeries for Drug Users.  
 
 ```{r}
 table1 <- xtabs(~infected + treatment,data=DataDrugUser)
