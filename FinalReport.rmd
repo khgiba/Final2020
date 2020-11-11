@@ -34,7 +34,7 @@ Every question is of the Cat~Cat type.
 
 <!--Divide this section into two sub-sections:  One for your descriptive  results and one for your inferential results.!-->
 
-#Graphical Descriptive Results
+#Graphical Descriptive Results for Gals.  
 
 ```{r}
 DataF = filter(FinalData,sex=="gal")
@@ -44,6 +44,22 @@ barchartGC(~infected + treatment,data=DataF, type="percent",main="gals")
 ``` 
 
 Among the females who contracted Covid, twice as many took the placebo. Therefore it appears that the vaccine does have a positive effect.  
+
+## Numerical Summeries for Gals.  
+
+```{r}
+table1 <- xtabs(~infected + treatment,data=DataF)
+rowPerc(table1)
+colPerc(table1)
+```
+
+## Inferential for Gals.  
+
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
 
 ```{r}
 DataG = filter(FinalData,sex=="guy")
@@ -72,7 +88,10 @@ barchartGC(~infected + treatment,data=DataDrugUser, type="percent",main="drugs")
 ```
   
 Among the Drug Users who contracted Covid, twice as many took the placebo. Therefore it appears that the vaccine does have a positive effect.       
+ 
   
 # Discussion and Conclusion
+
+
 
 <!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
