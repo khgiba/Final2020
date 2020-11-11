@@ -71,8 +71,28 @@ barchartGC(~infected + treatment,data=DataG)
 barchartGC(~infected + treatment,data=DataG, type="percent",main="guys")
 
 ```
-    
-It appears that the vaccine has a negative effect on the guys, It seems that they are more likely to get Covid from the vaccine.      
+
+It appears that the vaccine has a negative effect on the guys, It seems that they are more likely to get Covid from the vaccine.  
+
+## Numerical Summeries for Guys.  
+
+```{r}
+table1 <- xtabs(~infected + treatment,data=DataG)
+rowPerc(table1)
+colPerc(table1)
+```
+
+As you can see the amount of infected is 58.16% who took the drug and 41.84 % took the placebo. therefor taking the drug for guys has a negative effect.  
+
+## Inferential for Guys.
+
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
+
+The odds of 1.473872 more likely for guys who took the drug to get covid than taking the placebo.    
 
 ```{r}
 DataLGBTQ = filter(FinalData,LGBTQ=="gay")
@@ -83,6 +103,7 @@ barchartGC(~infected + treatment,data=DataLGBTQ, type="percent",main="gays")
   
 It appears that the vaccine has a negative effect on the LGBTQ, It seems that they are more likely to get Covid from the vaccine.    
 
+## Numerical Summeries for Gays.
 
 ```{r}
 DataDrugUser = filter(FinalData,DrugUser=="yes")
