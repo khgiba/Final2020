@@ -53,6 +53,8 @@ rowPerc(table1)
 colPerc(table1)
 ```
 
+You can see from the numerical summaries that the the amount of infected 33% took the drug and 66% took the placebo. The drug works for the gals.   
+
 ## Inferential for Gals.  
 
 ```{r}
@@ -60,6 +62,8 @@ chisq.test(table1)
 chisqtestGC(table1)
 fisher.test(table1)
 ```
+
+The fisher test shows us that the odds of 0.4889403 % of gal who took the placebo got covid compared to taking the drug.  
 
 ```{r}
 DataG = filter(FinalData,sex=="guy")
